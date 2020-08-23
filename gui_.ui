@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>494</width>
+    <height>323</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VisSpectra</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>visspec.png</normaloff>visspec.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>494</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Экспорт данных</string>
+     </property>
+     <widget class="QMenu" name="menu_jpeg">
+      <property name="title">
+       <string>Сохранить текущее изображение спектра в jpeg</string>
+      </property>
+      <addaction name="action_FullFrame"/>
+      <addaction name="action_SelFrame"/>
+      <addaction name="action_WorkFrame"/>
+      <addaction name="action_WorlFrClbr"/>
+     </widget>
+     <addaction name="actionSave_Binary_Data"/>
+     <addaction name="menu_jpeg"/>
+     <addaction name="separator"/>
+     <addaction name="actionClbTbl"/>
+     <addaction name="actionClbGrph"/>
+     <addaction name="actionCurSpectr"/>
+     <addaction name="separator"/>
+     <addaction name="actionSpCurve"/>
+    </widget>
+    <addaction name="actionOpen_Image_Data_File"/>
+    <addaction name="separator"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <widget class="QMenu" name="menuInterpolator">
+     <property name="title">
+      <string>Интерполятор</string>
+     </property>
+     <widget class="QMenu" name="menu">
+      <property name="title">
+       <string>Количество промежуточных точек</string>
+      </property>
+      <addaction name="action_nbInt_1"/>
+      <addaction name="action_nbInt_3"/>
+      <addaction name="action_nbInt_5"/>
+      <addaction name="action_nbInt_10"/>
+      <addaction name="action_nbInt_20"/>
+     </widget>
+     <addaction name="actionLinearInterp"/>
+     <addaction name="actionDblLancszInterp"/>
+     <addaction name="actionCubicInterp"/>
+     <addaction name="separator"/>
+     <addaction name="menu"/>
+    </widget>
+    <widget class="QMenu" name="menuPicture">
+     <property name="title">
+      <string>Изображение</string>
+     </property>
+     <addaction name="actionSizeSetup"/>
+     <addaction name="actionPicColor"/>
+    </widget>
+    <addaction name="menuPicture"/>
+    <addaction name="separator"/>
+    <addaction name="menuInterpolator"/>
+    <addaction name="actionApprox"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="actionWholeDescr"/>
+    <addaction name="actionImrvLsDescr"/>
+    <addaction name="actionClbrDescr"/>
+    <addaction name="actionLnDestDescr"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Image_Data_File">
+   <property name="text">
+    <string>Открыть RAW файл изображения</string>
+   </property>
+  </action>
+  <action name="actionSave_Binary_Data_">
+   <property name="text">
+    <string>Сохранить текущий спектр</string>
+   </property>
+   <property name="toolTip">
+    <string>Сохранить исходные данные изображения</string>
+   </property>
+   <property name="statusTip">
+    <string>Сохранить текущее выбранное изображение  в 4-ёх отдельных файлах соответсвующих цветам красный зелёный зелёный синий.</string>
+   </property>
+   <property name="whatsThis">
+    <string>Сохранить текущее выбранное изображение  в 4-ёх отдельных файлах соответсвующих цветам красный зелёный зелёный синий.</string>
+   </property>
+  </action>
+  <action name="actionSave_Prj">
+   <property name="text">
+    <string>Сохранить проект</string>
+   </property>
+  </action>
+  <action name="action_1">
+   <property name="text">
+    <string>Суммирование по столбцам</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Интерполятор</string>
+   </property>
+  </action>
+  <action name="actionLinearInterp">
+   <property name="text">
+    <string>Линейная интерполяция</string>
+   </property>
+  </action>
+  <action name="actionDblLancszInterp">
+   <property name="text">
+    <string>Двойная интерполяция Ланшоца</string>
+   </property>
+  </action>
+  <action name="action_nbInt_3">
+   <property name="text">
+    <string>3</string>
+   </property>
+  </action>
+  <action name="actionApprox">
+   <property name="text">
+    <string>Оптимизатор</string>
+   </property>
+  </action>
+  <action name="actionClbr">
+   <property name="text">
+    <string>Калибровка спектра</string>
+   </property>
+  </action>
+  <action name="actionWholeDescr">
+   <property name="text">
+    <string>Описание работы с программой</string>
+   </property>
+  </action>
+  <action name="actionImrvLsDescr">
+   <property name="text">
+    <string>Спрямление спектральных линий</string>
+   </property>
+  </action>
+  <action name="actionClbrDescr">
+   <property name="text">
+    <string> Калибровка спектра</string>
+   </property>
+  </action>
+  <action name="actionLnDestDescr">
+   <property name="text">
+    <string>Определение положения cпектральных линий</string>
+   </property>
+  </action>
+  <action name="actionClbTbl">
+   <property name="text">
+    <string>Выгрузить текущую калибровочную таблицу</string>
+   </property>
+  </action>
+  <action name="actionClbGrph">
+   <property name="text">
+    <string>Выгрузить параметры калибровки</string>
+   </property>
+  </action>
+  <action name="actionCurSpectr">
+   <property name="text">
+    <string>Выгрузить текущий спектр</string>
+   </property>
+  </action>
+  <action name="actionPicColor">
+   <property name="text">
+    <string>Цветовая корреция</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionSpCurve">
+   <property name="text">
+    <string>Выгрузить контур изгиба спектральной линии</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Выxод</string>
+   </property>
+  </action>
+  <action name="action_nbInt_5">
+   <property name="text">
+    <string>5</string>
+   </property>
+  </action>
+  <action name="action_nbInt_10">
+   <property name="text">
+    <string>10</string>
+   </property>
+  </action>
+  <action name="action_nbInt_20">
+   <property name="text">
+    <string>20</string>
+   </property>
+  </action>
+  <action name="actionCubicInterp">
+   <property name="text">
+    <string>Кубическая интерполяция (модиф.)</string>
+   </property>
+  </action>
+  <action name="action_FullFrame">
+   <property name="text">
+    <string>Полный кадр</string>
+   </property>
+  </action>
+  <action name="action_SelFrame">
+   <property name="text">
+    <string>Выделенная область</string>
+   </property>
+  </action>
+  <action name="action_WorkFrame">
+   <property name="text">
+    <string>Рабочая область со спрямлёнными линиями</string>
+   </property>
+  </action>
+  <action name="action_WorlFrClbr">
+   <property name="text">
+    <string>Рабочая область после калибровки</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Текущее изображение</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string/>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionSizeSetup">
+   <property name="text">
+    <string>Размер изображения</string>
+   </property>
+  </action>
+  <action name="actionSave_Binary_Data">
+   <property name="text">
+    <string>Сохранить текущий спектр в бинарном виде</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Общее описание программы</string>
+   </property>
+  </action>
+  <action name="action_nbInt_1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
